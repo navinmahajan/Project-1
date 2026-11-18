@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121c">
+  <meta name="description" content="Get in touch with Little Studio.">
+  <title>Contact · Little Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scene" aria-hidden="true"><span class="orb orb-one"></span><span class="orb orb-two"></span></div>
+  <div class="shell">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✦</span>Little Studio</a>
+      <div class="nav-links"><a class="link" href="index.html">Home</a><a class="link" href="about.html">About</a><a class="link" href="contact.html" aria-current="page">Contact</a></div>
+    </nav>
+    <main class="card">
+      <p class="eyebrow"><span class="spark" aria-hidden="true">✦</span> We'd love to hear from you</p>
+      <h1>Say <span>hello.</span></h1>
+      <p class="message">Have an idea, a question, or just want to say hi? Leave a note below and we’ll make sure it finds its way.</p>
+      <form class="contact-form" id="contact-form">
+        <label class="field">Your name<input name="name" autocomplete="name" placeholder="What should we call you?" required></label>
+        <label class="field">Your email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label class="field">Your message<textarea name="message" placeholder="Tell us what's on your mind…" required></textarea></label>
+        <button class="button" type="submit">Send your note <span aria-hidden="true">↗</span></button>
+        <p class="form-note">This is a demo form and doesn’t send messages yet.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="footer">A good conversation starts somewhere</div>
+    </main>
+  </div>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      document.getElementById('form-status').textContent = 'Thanks for your note! This demo form is ready to connect to a message service.';
+      event.currentTarget.reset();
+    });
+  </script>
+</body>
+</html>
