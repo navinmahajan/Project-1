@@ -40,6 +40,18 @@ h1 span { display: block; color: transparent; background: linear-gradient(100deg
 .note { padding: 20px; border: 1px solid rgb(255 255 255 / 9%); border-radius: 18px; background: rgb(255 255 255 / 4%); }
 .note strong { display: block; margin-bottom: 7px; color: var(--mint); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
 .note p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
+.gallery-item { min-width: 0; }
+.art { position: relative; display: grid; place-items: center; aspect-ratio: 1 / 1.05; overflow: hidden; border: 1px solid rgb(255 255 255 / 12%); border-radius: 17px; }
+.art::before, .art::after { content: ""; position: absolute; border-radius: 50%; }
+.art::before { width: 66%; aspect-ratio: 1; background: rgb(255 255 255 / 17%); filter: blur(1px); }
+.art::after { width: 40%; aspect-ratio: 1; border: 1px solid rgb(255 255 255 / 35%); }
+.art span { position: relative; z-index: 1; color: rgb(255 255 255 / 88%); font-size: clamp(30px, 8vw, 62px); text-shadow: 0 8px 30px rgb(0 0 0 / 22%); }
+.art-one { background: radial-gradient(ellipse at 35% 30%, #f7c4a4, transparent 45%), linear-gradient(145deg, #6c4d91, #d27f91 52%, #f0bd9b); }
+.art-two { background: radial-gradient(ellipse at 70% 28%, #b9eff0, transparent 42%), linear-gradient(155deg, #375778, #71a9a4 55%, #c3d8ae); }
+.art-three { background: radial-gradient(ellipse at 36% 70%, #f7d783, transparent 42%), linear-gradient(145deg, #e28666, #b35868 55%, #573d70); }
+.gallery-caption { margin: 11px 2px 0; color: #ded9ec; font-size: 13px; font-weight: 600; }
+.gallery-caption small { display: block; margin-top: 4px; color: #848297; font-size: 11px; font-weight: 400; }
 .contact-form { display: grid; gap: 16px; max-width: 540px; margin-top: 30px; }
 .field { display: grid; gap: 8px; color: #d8d4e6; font-size: 13px; font-weight: 600; }
 .field input, .field textarea { width: 100%; border: 1px solid rgb(255 255 255 / 13%); border-radius: 12px; padding: 13px 15px; outline: none; color: var(--ink); background: rgb(7 8 14 / 35%); font: inherit; font-weight: 400; }
@@ -51,5 +63,5 @@ h1 span { display: block; color: transparent; background: linear-gradient(100deg
 .form-status { min-height: 1.5em; color: var(--mint); font-size: 13px; }
 @keyframes arrive { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes twinkle { 50% { transform: rotate(18deg) scale(1.18); opacity: .7; } }
-@media (max-width: 600px) { body { padding: 18px; } .about-grid { grid-template-columns: 1fr; gap: 24px; } .nav { align-items: flex-start; } .nav-links { gap: 0; } .nav a.link { padding: 8px 9px; font-size: 12px; } .card { border-radius: 23px; } }
+@media (max-width: 600px) { body { padding: 18px; } .about-grid { grid-template-columns: 1fr; gap: 24px; } .nav { align-items: flex-start; gap: 8px; flex-wrap: wrap; } .nav-links { gap: 0; } .nav a.link { padding: 8px 9px; font-size: 12px; } .card { border-radius: 23px; } .gallery-grid { grid-template-columns: 1fr; gap: 20px; } .art { aspect-ratio: 1.6 / 1; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
